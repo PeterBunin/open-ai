@@ -1,0 +1,24 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app
+spec:
+  containers:
+  - name: app-container
+    image: demo-app:1.0.0
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: app-cronjob
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: app-container
+            image: demo-app:1.0.0
+          restartPolicy: OnFailure

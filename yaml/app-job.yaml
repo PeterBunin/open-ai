@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app
+spec:
+  containers:
+  - name: app
+    image: demo-app:1.0.0
+    imagePullPolicy: IfNotPresent
+  restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: JobapiVersion: v1
+kind: Pod
+metadata:
+  name: app
+spec:
+  containers:
+  - name: app
+    image: demo-app:1.0.0
+    imagePullPolicy: IfNotPresent
+  restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: app-job
+spec:
+  template:
+    metadata:
+      name: app
+    spec:
+      containers:
+      - name: app
+        image: demo-app:1.0.0
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Never
+  backoffLimit: 5
+metadata:
+  name: app-job
+spec:
+  template:
+    metadata:
+      name: app
+    spec:
+      containers:
+      - name: app
+        image: demo-app:1.0.0
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Never
+  backoffLimit: 5
