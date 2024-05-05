@@ -5,7 +5,7 @@ open-ai k8s plugin demo
 |---   |---     |---            |---        |
 |app    | create deployment app with image demo-app:1.0.0 | Creates simple app with image app:1.0.0               |[app.yaml](/yaml/app.yaml)           |
 |livnessProbe| create deployment app with image demo-app:1.0.0 | Creates simple app with default livenesprobe params|[app-livenessProbe.yaml](/yaml/app-livenessProbe.yaml)    |
-|redinessProbe  |create pod app with image demo-app:1.0.0 and readinessProbe | Creates simple app with default redinessprobe params | [app-redinessProbe.yaml](/yaml/app-redinessProbe.yaml)|
+|redinessProbe  |create pod app with image demo-app:1.0.0 and readinessProbe | Creates simple app with default redinessprobe params | [app-readinessProbe.yaml](/yaml/app-readinessProbe.yaml)|
 |volumeMount| create pod app with image demo-app:1.0.0 and volumeMount | Creates simple app with default volumemount params | [app-volumeMounts.yaml](/yaml/app-volumeMounts.yaml)|
 |cronJob| create pod app with image demo-app:1.0.0 and cronJob | Creates simple app with default cronjob params |[app-cronjob.yaml](/yaml/app-cronjob.yaml)|
 |job| create pod app with image demo-app:1.0.0 and job | Creates simple app with default job params |[app-job.yaml](/yaml/app-job.yaml)|
